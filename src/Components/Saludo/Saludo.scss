@@ -1,0 +1,16 @@
+@import '../../scss/_general.scss';
+.form {
+    &__flex {
+        @include flex();
+    }
+    &__input {
+        @include form-elemt();
+    }
+    &__select {
+        @extend .form__input;
+    }
+    &__button {
+        @include form-elemt($bg: $primary-color, $width: auto);
+        color: $global-white;
+    }
+}

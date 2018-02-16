@@ -1,0 +1,29 @@
+@mixin form-elemt($bg: $global-white, $width:200px) {
+    background-color: $bg;
+    border: solid 1px $tertiary-color;
+    border-radius: 3px;
+    width: $width;
+    padding: 5px;
+    box-sizing: border-box;
+    margin: 10px 0;
+}
+
+@mixin navigation-item() {
+    display: block;
+    list-style: none;
+    a {
+        text-decoration: none;
+    }
+}
+
+@mixin flex($justify: space-between, $wrap: nowrap, $item:center, $direction: row) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $item;
+    flex-wrap: $wrap;
+}
+
+.row {
+    margin: 0 !important;
+}

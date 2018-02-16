@@ -1,0 +1,28 @@
+@import '../../scss/_general.scss';
+.form {
+    &__flex {
+        @include flex();
+        &--colum {
+            width: 100%;
+            @include flex($item: flex-end, $direction: column);
+        }
+    }
+    &__input {
+        @include form-elemt();
+    }
+    &__select {
+        @extend .form__input;
+    }
+    &__button {
+        @include form-elemt($bg: $primary-color, $width: auto);
+        color: $global-white;
+    }
+    &__label--title {
+        font-weight: bold;
+    }
+    &__label--error {
+        font-weight: bold;
+        font-size: 14px;
+        color: red;
+    }
+}
