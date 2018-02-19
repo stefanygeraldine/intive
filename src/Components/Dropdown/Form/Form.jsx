@@ -1,6 +1,6 @@
 import React from 'react';
 import './Form.scss';
-import { Dropdown } from '../Dropdown/Dropdown';
+import Dropdown from '../Dropdown/Dropdown';
 import { connect } from 'react-redux';
 import { updateMessage } from '../../actionCreators';
 
@@ -21,7 +21,7 @@ const Form = ({ validation, updateMessage, countries }) => {
                     <label className="form__label--title">País</label>
                 </div>
                 <div className="form__flex--colum">
-                <Dropdown countries={countries} validation={validation} value={validation.country} click={validation.click}/>
+                <Dropdown />
                     <label className="form__label--error">{validation.countryError}</label>
                 </div>
             </div>

@@ -78,6 +78,7 @@ const listMessage = (item) => {
 const initializateValidation = () => {
     const VALIDATION = {
         change: ONCHANGE,
+        click: ONCLICK,
         ...VARS_FORM,
         ...ERROR_VARS_FORM
     };
@@ -89,7 +90,7 @@ const initializateValidation = () => {
 
 
 const ONCHANGE = (event, validation) => {
-
+    console.log(event.target)
     let item_name = event.target.name;
     let item_value = event.target.value;
     let item = {
@@ -97,6 +98,18 @@ const ONCHANGE = (event, validation) => {
     };
 
     let validateNewValue = {...validation, ...item };
+
+    store.dispatch({
+        type: 'UPDATE_VALIDATION',
+        validation: validateNewValue
+    });
+}
+const ONCLICK = (itemValue) => {
+    let item = {
+        'country': itemValue
+    };
+
+    let validateNewValue = {...store.getState().validation, ...item };
 
     store.dispatch({
         type: 'UPDATE_VALIDATION',
@@ -130,6 +143,7 @@ const updateMessage = (validation) => {
                 //CLEAR LABELS
             let labelMessage = {
                 change: ONCHANGE,
+                click: ONCLICK,
                 ...VARS_FORM,
                 ...ERROR_VARS_FORM
             };
